@@ -1,0 +1,51 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+  ],
+  "settings": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.eol": "\n",
+    "files.exclude": {
+      "node_modules/": true,
+      "package-lock.json": true,
+      "LICENSE": true,
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+  },
+  "launch": {
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "test",
+        "skipFiles": ["<node_internals>/**"],
+        "program": "${workspaceFolder}/index.js",
+        "console": "integratedTerminal"
+      },
+    ],
+    "compounds": []
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "npm publish",
+        "type": "shell",
+        "command": "npm",
+        "args": ["publish"],
+        "group": {
+          "kind": "build"
+        },
+        "isBackground": true,
+      }
+    ]
+  }
+}

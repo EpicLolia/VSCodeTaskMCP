@@ -1,0 +1,37 @@
+{
+  "name": "vscode-task-mcp",
+  "version": "1.0.0",
+  "description": "MCP server that exposes VS Code task definitions to AI agents for execution.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EpicLolia/VSCodeTaskMCP.git"
+  },
+  "keywords": [
+    "vscode",
+    "tasks",
+    "mcp"
+  ],
+  "author": "loiafeng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EpicLolia/VSCodeTaskMCP/issues"
+  },
+  "homepage": "https://github.com/EpicLolia/VSCodeTaskMCP#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@eslint/json": "^1.2.0",
+    "eslint": "^10.3.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.6.0",
+    "prettier": "^3.8.3"
+  }
+}

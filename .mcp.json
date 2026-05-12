@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "vscode-task-mcp": {
+      "command": "node",
+      "args": ["./index.js"]
+    }
+  }
+}

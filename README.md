@@ -1,2 +1,3 @@
 # VSCodeTaskMCP
-MCP for agents to run vscode tasks.
+
+MCP server that exposes VS Code task definitions to AI agents for execution.
