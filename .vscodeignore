@@ -1,0 +1,14 @@
+.claude/
+.git/
+.gitignore
+node_modules/
+src/
+out/
+*.tsbuildinfo
+esbuild.mjs
+tsconfig.json
+eslint.config.mjs
+prettier.config.mjs
+.eslintcache
+.mcp.json
+VSCodeTaskMCP.code-workspace

@@ -1,26 +1,75 @@
 {
   "name": "vscode-task-mcp",
-  "version": "1.0.0",
-  "description": "MCP server that exposes VS Code task definitions to AI agents for execution.",
-  "main": "index.js",
-  "scripts": {
-    "test": "node index.js"
-  },
+  "displayName": "VS Code Task MCP",
+  "description": "Exposes VS Code task definitions to AI agents via MCP (Model Context Protocol) over HTTP.",
+  "version": "0.1.0",
+  "publisher": "EpicLolia",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EpicLolia/VSCodeTaskMCP.git"
   },
-  "keywords": [
-    "vscode",
-    "tasks",
-    "mcp"
-  ],
-  "author": "loiafeng",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/EpicLolia/VSCodeTaskMCP/issues"
   },
   "homepage": "https://github.com/EpicLolia/VSCodeTaskMCP#readme",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "vscode",
+    "tasks",
+    "mcp",
+    "ai",
+    "claude"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "VS Code Task MCP",
+      "properties": {
+        "vscodeTaskMcp.port": {
+          "type": "number",
+          "default": 6189,
+          "description": "HTTP port for the MCP server."
+        },
+        "vscodeTaskMcp.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable the MCP server."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "vscodeTaskMcp.restart",
+        "title": "Task MCP: Restart Server"
+      },
+      {
+        "command": "vscodeTaskMcp.stop",
+        "title": "Task MCP: Stop Server"
+      }
+    ],
+    "mcpServerDefinitionProviders": [
+      {
+        "id": "vscode-task-mcp",
+        "label": "VS Code Task MCP"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "node esbuild.mjs --production",
+    "build": "node esbuild.mjs",
+    "watch": "node esbuild.mjs --watch",
+    "lint": "eslint src/",
+    "package": "vsce package"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
     "zod": "^4.4.3"
@@ -28,10 +77,15 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^1.2.0",
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.100.0",
+    "esbuild": "^0.25.0",
     "eslint": "^10.3.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "globals": "^17.6.0",
-    "prettier": "^3.8.3"
+    "prettier": "^3.8.3",
+    "typescript": "^5.8.0",
+    "typescript-eslint": "^8.0.0"
   }
 }

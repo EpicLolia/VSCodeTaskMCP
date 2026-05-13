@@ -141,3 +141,20 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Extension build output
+dist/
+out/
+
+# VSIX packages
+*.vsix
+
+# Extension build output
+dist/
+out/
+
+# VSIX packages
+*.vsix
+
+# claude code
+.claude/settings.local.json
